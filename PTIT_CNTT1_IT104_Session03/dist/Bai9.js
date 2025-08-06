@@ -1,3 +1,4 @@
+"use strict";
 const btnAdd = document.getElementById("btnAdd");
 const btnSubtract = document.getElementById("btnSubtract");
 const btnMultiply = document.getElementById("btnMultiply");
@@ -14,6 +15,7 @@ btnDivide?.addEventListener("click", () => (currentOperator = "/"));
 btnPower?.addEventListener("click", () => (currentOperator = "^"));
 btnSqrt?.addEventListener("click", () => (currentOperator = "√"));
 btnFactorial?.addEventListener("click", () => (currentOperator = "!"));
+
 calculateBtn?.addEventListener("click", () => {
     const xInput = document.getElementById("input1");
     const yInput = document.getElementById("input2");
@@ -31,22 +33,20 @@ calculateBtn?.addEventListener("click", () => {
         alert(`√(${x}, ${y}) = ${sqrt(x, y)}`);
         return;
     }
-    switch (currentOperator) {
-        case "+":
-            alert(`${x} + ${y} = ${x + y}`);
-            break;
-        case "-":
-            alert(`${x} - ${y} = ${x - y}`);
-            break;
-        case "*":
-            alert(`${x} × ${y} = ${x * y}`);
-            break;
-        case "/":
-            alert(`${x} ÷ ${y} = ${x / y}`);
-            break;
-        case "^":
-            alert(`${x} ^ ${y} = ${power(x, y)}`);
-            break;
+    if (currentOperator === "+") {
+        alert(`${x} + ${y} = ${x + y}`);
+    }
+    else if (currentOperator === "-") {
+        alert(`${x} - ${y} = ${x - y}`);
+    }
+    else if (currentOperator === "*") {
+        alert(`${x} × ${y} = ${x * y}`);
+    }
+    else if (currentOperator === "/") {
+        alert(`${x} ÷ ${y} = ${x / y}`);
+    }
+    else if (currentOperator === "^") {
+        alert(`${x} ^ ${y} = ${power(x, y)}`);
     }
 });
 function power(base, exponent) {
@@ -66,5 +66,6 @@ function factorial(n) {
     }
     return result;
 }
+
 export {};
 //# sourceMappingURL=Bai9.js.map
