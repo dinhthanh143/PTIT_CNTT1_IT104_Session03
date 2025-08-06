@@ -7,6 +7,7 @@ const btnSqrt = document.getElementById("btnSqrt");
 const btnFactorial = document.getElementById("btnFactorial");
 const calculateBtn = document.getElementById("calculate");
 let currentOperator = "";
+
 btnAdd?.addEventListener("click", () => (currentOperator = "+"));
 btnSubtract?.addEventListener("click", () => (currentOperator = "-"));
 btnMultiply?.addEventListener("click", () => (currentOperator = "*"));
@@ -28,27 +29,21 @@ calculateBtn?.addEventListener("click", () => {
     alert(`${x}! = ${factorial(x)}`);
     return;
   }
-
   if (currentOperator === "√") {
     alert(`√(${x}, ${y}) = ${sqrt(x, y)}`);
     return;
   }
-  switch (currentOperator) {
-    case "+":
-      alert(`${x} + ${y} = ${x + y}`);
-      break;
-    case "-":
-      alert(`${x} - ${y} = ${x - y}`);
-      break;
-    case "*":
-      alert(`${x} × ${y} = ${x * y}`);
-      break;
-    case "/":
-      alert(`${x} ÷ ${y} = ${x / y}`);
-      break;
-    case "^":
-      alert(`${x} ^ ${y} = ${power(x, y)}`);
-      break;
+
+  if (currentOperator === "+") {
+    alert(`${x} + ${y} = ${x + y}`);
+  } else if (currentOperator === "-") {
+    alert(`${x} - ${y} = ${x - y}`);
+  } else if (currentOperator === "*") {
+    alert(`${x} × ${y} = ${x * y}`);
+  } else if (currentOperator === "/") {
+    alert(`${x} ÷ ${y} = ${x / y}`);
+  } else if (currentOperator === "^") {
+    alert(`${x} ^ ${y} = ${power(x, y)}`);
   }
 });
 
